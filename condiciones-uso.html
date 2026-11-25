@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Condiciones de uso</title>
+<style>
+/*
+VOICE: formal, sereno, legible; una página legal que se lee de un tirón.
+IDEA: un memo bien compuesto, con el sello de la app en la cabecera.
+PICTURE: el resumen "en el servidor / solo en tu móvil" como dos fichas.
+COLOUR and TYPE: blanco, tinta #15131f del juego, coral #d93a5b para enlaces y marcas; Figtree.
+LAYOUT: una columna de lectura de 720px, tablas que se apilan en el móvil.
+*/
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#15131f);--ink:light-dark(#15131f,#f4f1ff);--dim:light-dark(#5b5670,#a9a3c4);--line:light-dark(#e4e1ec,#2e2a47);--soft:light-dark(#f6f5f9,#1d1a2b);--acc:light-dark(#c92f50,#ff6b85);--mark:light-dark(#fff1a8,#5a4a00)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:clip}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(5vw,18px)}
+header{border-bottom:1px solid var(--line);padding:22px 0 26px}
+.sello{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--dim)}
+.sello svg{width:30px;height:30px;flex:none}
+h1{font-size:clamp(32px,6vw,46px);line-height:1.05;margin:18px 0 10px;font-weight:800;text-wrap:balance;letter-spacing:-.01em}
+.sub{color:var(--dim);margin:0;font-size:16px}
+h2{font-size:22px;line-height:1.2;margin:40px 0 10px;font-weight:800;text-wrap:balance}
+h3{font-size:17px;margin:22px 0 6px;font-weight:800}
+p,li{max-width:68ch}
+a{color:var(--acc);text-underline-offset:3px}
+mark.falta{background:var(--mark);color:inherit;padding:0 .2em;border-radius:3px}
+.borrador{background:var(--mark);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700;margin:18px 0 0}
+.scroll{display:flex;gap:6px 18px;flex-wrap:nowrap;overflow-x:auto;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;white-space:nowrap}
+.scroll a{flex:none;color:var(--dim);text-decoration:none}.scroll a:hover,.scroll a:focus-visible{color:var(--acc)}
+@media(min-width:900px){.scroll{position:sticky;top:0;background:var(--bg);z-index:2}}
+html{scroll-padding-top:72px}
+.fichas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0 6px}
+.ficha{background:var(--soft);border-radius:14px;padding:18px 18px 10px}
+.ficha h3{margin:0 0 4px;display:flex;align-items:center;gap:8px}
+.ficha svg{width:22px;height:22px;flex:none}
+.ficha ul{margin:6px 0 8px;padding-left:18px}.ficha li{margin:3px 0;font-size:15px}
+.clave{margin:18px 0 0;padding:0;list-style:none}
+.clave li{padding:8px 0 8px 28px;position:relative;border-top:1px solid var(--line)}
+.clave li::before{content:"";position:absolute;left:4px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+table{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--dim);font-weight:800;padding:8px 10px 8px 0;border-bottom:2px solid var(--ink)}
+td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700}
+.pasos{counter-reset:p;list-style:none;padding:0;margin:16px 0}
+.pasos li{counter-increment:p;position:relative;padding:4px 0 14px 50px;min-height:44px}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:800;display:grid;place-items:center}
+.opcion{border:1px solid var(--line);border-radius:16px;padding:6px 20px 8px;margin:18px 0}
+.opcion h2{margin-top:18px}
+.etq{display:inline-block;font-size:13px;font-weight:800;color:var(--acc);margin-left:6px}
+.correo{font-weight:800;font-size:18px;word-break:break-all}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:20px 0 40px;color:var(--dim);font-size:14px}
+@media(max-width:600px){.fichas{grid-template-columns:minmax(0,1fr)}table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7.5em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7em;margin-inline-start:-7.5em;white-space:normal;color:var(--dim);font-weight:700;font-size:13px}.stack td:empty{display:none}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="sello"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H14l-6 5v-5H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" fill="var(--acc)"/><circle cx="10" cy="14.5" r="2" fill="var(--bg)"/><circle cx="16" cy="14.5" r="2" fill="var(--bg)"/><circle cx="22" cy="14.5" r="2" fill="var(--bg)"/></svg><span>humilla2</span></div>
+  <h1>Condiciones de uso</h1>
+  <p class="sub">Última actualización: 25 de noviembre de 2026</p>
+  
+</header>
+<nav class="scroll" aria-label="Secciones">
+  <a href="#resumen">Resumen</a><a href="#quien">Quién</a><a href="#cuenta">Tu cuenta</a><a href="#juego">El juego</a><a href="#hardcore">Hardcore</a><a href="#audios">Tus audios</a><a href="#ranking">Ranking</a><a href="#prohibido">Prohibido</a><a href="#baja">Suspensión</a><a href="#app">La app</a><a href="#ley">Ley</a>
+</nav>
+
+<main>
+<section id="resumen">
+  <ul class="clave">
+    <li>Solo para mayores de 18 años. Es humor con lenguaje adulto, no va contra nadie real.</li>
+    <li>El contenido <b>Hardcore</b> es privado: solo se puede escuchar dentro del juego. No se puede grabar, compartir ni publicar fuera.</li>
+    <li>Los audios que envías siguen siendo tuyos; nos das permiso para publicarlos en el juego mientras no los borres.</li>
+    <li>Los diamantes y lo que desbloqueas no son dinero ni se pueden cambiar por dinero.</li>
+  </ul>
+</section>
+
+<section id="quien">
+  <h2>1. Quién presta el servicio</h2>
+  <p>La app humilla2 la desarrolla y publica Linz Studio Web, nombre comercial de Javier Linzoain Pedraza, como particular. Contacto: <a href="mailto:linzstudioweb@gmail.com">linzstudioweb@gmail.com</a>.</p>
+  <p>Al crear tu cuenta aceptas estas condiciones y las <b>normas para grabar</b> que ves en la app antes de enviar tu primer audio. Cómo tratamos tus datos está en la <a href="politica-privacidad.html">política de privacidad</a>.</p>
+</section>
+
+<section id="cuenta">
+  <h2>2. Tu cuenta</h2>
+  <ul>
+    <li>Tienes que tener 18 años o más. Si sabemos que una cuenta es de un menor, la borraremos.</li>
+    <li>Puedes jugar unas partidas de prueba sin registrarte. Para seguir, creas tu perfil con usuario, contraseña y correo. Una cuenta por persona.</li>
+    <li>Guarda bien tu contraseña y no se la des a nadie: lo que se haga con tu cuenta es responsabilidad tuya. Si la olvidas, puedes recuperarla con tu correo.</li>
+    <li>Tu @usuario no puede hacerse pasar por otra persona, ni contener insultos a personas reales, ni datos personales. Podemos pedirte que lo cambies o cambiarlo nosotros. Tú puedes cambiarlo una vez al año.</li>
+    <li>Puedes borrar tu cuenta cuando quieras desde Perfil → Ajustes. <a href="borrar-cuenta.html">Cómo borrar tu cuenta</a>.</li>
+  </ul>
+</section>
+
+<section id="juego">
+  <h2>3. El juego, los diamantes y lo que desbloqueas</h2>
+  <p>Los diamantes, la racha, los niveles, los vituperios desbloqueados y el modo Hardcore son elementos del juego. No tienen valor económico, no se pueden vender, cambiar por dinero ni pasar a otra cuenta, y se pierden si borras la cuenta. Ahora mismo la app no tiene compras con dinero real.</p>
+  <p>Podemos cambiar las reglas del juego (precios en diamantes, premios, retos) para mantenerlo equilibrado. Si detectamos trampas, podemos anular los diamantes o desbloqueos conseguidos con ellas.</p>
+</section>
+
+<section id="hardcore">
+  <h2>4. Contenido Hardcore: privado y protegido</h2>
+  <p>Los vituperios Hardcore (marcados con 🔥) y las partidas en modo Hardcore son contenido exclusivo del juego. Te damos permiso para escucharlos <b>solo dentro de la app</b>, para tu uso personal. Por eso:</p>
+  <ul>
+    <li>Está prohibido grabarlos, capturarlos o copiarlos por cualquier medio, también grabando la pantalla o con otro dispositivo.</li>
+    <li>Está prohibido compartirlos, publicarlos o difundirlos fuera de la app, en redes sociales, mensajería o cualquier otro sitio.</li>
+    <li>Está prohibido saltarse las protecciones de la app: mientras suena contenido Hardcore, la app no permite compartirlo ni hacer capturas o grabaciones de pantalla.</li>
+  </ul>
+  <p>Además de nuestros derechos sobre el juego, en esos audios hay voces de otras personas que solo han aceptado que suenen dentro de la app. Si incumples este punto, podemos suspender o borrar tu cuenta y pedir que se retire lo publicado, sin perjuicio de las acciones legales que correspondan.</p>
+  <p>Los vituperios que no son Hardcore sí se pueden compartir, pero solo con el botón 📤 de la app.</p>
+</section>
+
+<section id="audios">
+  <h2>5. Los audios que envías</h2>
+  <ul>
+    <li><b>Siguen siendo tuyos.</b> Al enviarlos nos das un permiso gratuito, no exclusivo y para todo el mundo para guardarlos, publicarlos en el juego (en cualquier modo, también Hardcore), mostrarlos en duelos y ranking, y permitir que otros jugadores compartan los que no son Hardcore desde la app. El permiso dura mientras el audio esté en la app.</li>
+    <li>Garantizas que la voz es tuya, o que quien habla ha dado su permiso, y que no incluye música ni contenido de otros.</li>
+    <li>Tienen que cumplir las normas para grabar. En resumen, está prohibido: insultar o burlarse de alguien por su raza, origen, nacionalidad, religión, orientación sexual, identidad de género, sexo, discapacidad, enfermedad o pobreza; nombrar o imitar a personas reales, famosos incluidos; las amenazas de verdad o animar a hacer daño; cualquier contenido sexual con menores y la apología del terrorismo; y cualquier cosa ilegal.</li>
+    <li>Revisamos cada audio antes de publicarlo. Si lo rechazamos, te decimos el motivo en Perfil. Si un audio publicado recibe varias denuncias, deja de sonar hasta que lo revisemos. Si no estás de acuerdo con una decisión, escríbenos y la revisaremos de nuevo.</li>
+    <li>Puedes retirar tus audios borrando tu cuenta o escribiéndonos.</li>
+  </ul>
+</section>
+
+<section id="ranking">
+  <h2>6. Duelos, ranking y premios</h2>
+  <p>En los duelos votas cuál de dos vituperios te gusta más; el ranking mensual cuenta votos a favor menos votos en contra. Está prohibido manipularlo: varias cuentas, votos pactados, programas automáticos o cualquier truco. Podemos anular votos y sacar del ranking a quien lo haga.</p>
+  <p>Si alguna vez ofrecemos premios, solo valdrán según unas bases publicadas antes en la app, que dirán quién puede participar, cómo se gana y cómo se entrega el premio.</p>
+</section>
+
+<section id="prohibido">
+  <h2>7. Qué no se puede hacer</h2>
+  <ul>
+    <li>Hacer trampas, usar programas para jugar o votar, o crear cuentas para conseguir diamantes o votos.</li>
+    <li>Acosar a otros jugadores, denunciar audios en falso de forma repetida o usar la app para insultar a personas reales.</li>
+    <li>Copiar, descompilar o modificar la app, o extraer sus audios o datos de forma automática.</li>
+    <li>Usar la app para fines comerciales sin nuestro permiso.</li>
+  </ul>
+</section>
+
+<section id="baja">
+  <h2>8. Suspensión y baja</h2>
+  <p>Si incumples estas condiciones, podemos retirar contenido, suspender tu cuenta o borrarla, según la gravedad, y te explicaremos el motivo cuando sea posible. Tú puedes dejar de usar la app y borrar tu cuenta en cualquier momento.</p>
+</section>
+
+<section id="app">
+  <h2>9. La app y sus contenidos</h2>
+  <p>La app, su diseño, su código, sus textos, su música y sus efectos pertenecen al titular de Linz Studio Web o a quien los ha cedido. Te damos permiso para usarla de forma personal y no comercial.</p>
+  <p>Hacemos lo posible para que funcione bien, pero puede tener fallos o interrupciones, y podemos cambiarla o dejar de ofrecerla. Nada de esto limita los derechos que te da la ley como consumidor.</p>
+</section>
+
+<section id="ley">
+  <h2>10. Cambios y ley aplicable</h2>
+  <p>Si cambiamos estas condiciones de forma importante, lo avisaremos en la app antes de que se apliquen. Se rigen por la ley española. Si eres consumidor, puedes acudir a los tribunales de tu domicilio.</p>
+</section>
+</main>
+
+<footer>
+  humilla2 · Linz Studio Web · <a href="mailto:linzstudioweb@gmail.com">linzstudioweb@gmail.com</a> · <a href="politica-privacidad.html">Privacidad</a> · <a href="borrar-cuenta.html">Borrar tu cuenta</a>
+</footer>
+</div>
+
+</body>
+</html>

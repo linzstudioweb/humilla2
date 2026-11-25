@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>humilla2</title>
+<style>
+/*
+VOICE: formal, sereno, legible; una página legal que se lee de un tirón.
+IDEA: un memo bien compuesto, con el sello de la app en la cabecera.
+PICTURE: el resumen "en el servidor / solo en tu móvil" como dos fichas.
+COLOUR and TYPE: blanco, tinta #15131f del juego, coral #d93a5b para enlaces y marcas; Figtree.
+LAYOUT: una columna de lectura de 720px, tablas que se apilan en el móvil.
+*/
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#15131f);--ink:light-dark(#15131f,#f4f1ff);--dim:light-dark(#5b5670,#a9a3c4);--line:light-dark(#e4e1ec,#2e2a47);--soft:light-dark(#f6f5f9,#1d1a2b);--acc:light-dark(#c92f50,#ff6b85);--mark:light-dark(#fff1a8,#5a4a00)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:clip}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(5vw,18px)}
+header{border-bottom:1px solid var(--line);padding:22px 0 26px}
+.sello{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--dim)}
+.sello svg{width:30px;height:30px;flex:none}
+h1{font-size:clamp(32px,6vw,46px);line-height:1.05;margin:18px 0 10px;font-weight:800;text-wrap:balance;letter-spacing:-.01em}
+.sub{color:var(--dim);margin:0;font-size:16px}
+h2{font-size:22px;line-height:1.2;margin:40px 0 10px;font-weight:800;text-wrap:balance}
+h3{font-size:17px;margin:22px 0 6px;font-weight:800}
+p,li{max-width:68ch}
+a{color:var(--acc);text-underline-offset:3px}
+mark.falta{background:var(--mark);color:inherit;padding:0 .2em;border-radius:3px}
+.borrador{background:var(--mark);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700;margin:18px 0 0}
+.scroll{display:flex;gap:6px 18px;flex-wrap:nowrap;overflow-x:auto;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;white-space:nowrap}
+.scroll a{flex:none;color:var(--dim);text-decoration:none}.scroll a:hover,.scroll a:focus-visible{color:var(--acc)}
+@media(min-width:900px){.scroll{position:sticky;top:0;background:var(--bg);z-index:2}}
+html{scroll-padding-top:72px}
+.fichas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0 6px}
+.ficha{background:var(--soft);border-radius:14px;padding:18px 18px 10px}
+.ficha h3{margin:0 0 4px;display:flex;align-items:center;gap:8px}
+.ficha svg{width:22px;height:22px;flex:none}
+.ficha ul{margin:6px 0 8px;padding-left:18px}.ficha li{margin:3px 0;font-size:15px}
+.clave{margin:18px 0 0;padding:0;list-style:none}
+.clave li{padding:8px 0 8px 28px;position:relative;border-top:1px solid var(--line)}
+.clave li::before{content:"";position:absolute;left:4px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+table{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--dim);font-weight:800;padding:8px 10px 8px 0;border-bottom:2px solid var(--ink)}
+td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700}
+.pasos{counter-reset:p;list-style:none;padding:0;margin:16px 0}
+.pasos li{counter-increment:p;position:relative;padding:4px 0 14px 50px;min-height:44px}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:800;display:grid;place-items:center}
+.opcion{border:1px solid var(--line);border-radius:16px;padding:6px 20px 8px;margin:18px 0}
+.opcion h2{margin-top:18px}
+.etq{display:inline-block;font-size:13px;font-weight:800;color:var(--acc);margin-left:6px}
+.correo{font-weight:800;font-size:18px;word-break:break-all}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:20px 0 40px;color:var(--dim);font-size:14px}
+@media(max-width:600px){.fichas{grid-template-columns:minmax(0,1fr)}table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7.5em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7em;margin-inline-start:-7.5em;white-space:normal;color:var(--dim);font-weight:700;font-size:13px}.stack td:empty{display:none}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="sello"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H14l-6 5v-5H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" fill="var(--acc)"/><circle cx="10" cy="14.5" r="2" fill="var(--bg)"/><circle cx="16" cy="14.5" r="2" fill="var(--bg)"/><circle cx="22" cy="14.5" r="2" fill="var(--bg)"/></svg><span>humilla2</span></div>
+  <h1>humilla2</h1>
+  <p class="sub">Juego de humor para mayores de 18 años, desarrollado por Linz Studio Web.</p>
+</header>
+
+<main>
+<div class="opcion">
+  <h2>Información legal</h2>
+  <ul>
+    <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+    <li><a href="condiciones-uso.html">Condiciones de uso</a></li>
+    <li><a href="borrar-cuenta.html">Cómo borrar tu cuenta y tus datos</a></li>
+  </ul>
+</div>
+
+<div class="opcion">
+  <h2>Contacto</h2>
+  <p>Para cualquier duda o petición, escríbenos a <a href="mailto:linzstudioweb@gmail.com">linzstudioweb@gmail.com</a>.</p>
+</div>
+</main>
+</div>
+
+</body>
+</html>

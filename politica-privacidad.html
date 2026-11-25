@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad</title>
+<style>
+/*
+VOICE: formal, sereno, legible; una página legal que se lee de un tirón.
+IDEA: un memo bien compuesto, con el sello de la app en la cabecera.
+PICTURE: el resumen "en el servidor / solo en tu móvil" como dos fichas.
+COLOUR and TYPE: blanco, tinta #15131f del juego, coral #d93a5b para enlaces y marcas; Figtree.
+LAYOUT: una columna de lectura de 720px, tablas que se apilan en el móvil.
+*/
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#15131f);--ink:light-dark(#15131f,#f4f1ff);--dim:light-dark(#5b5670,#a9a3c4);--line:light-dark(#e4e1ec,#2e2a47);--soft:light-dark(#f6f5f9,#1d1a2b);--acc:light-dark(#c92f50,#ff6b85);--mark:light-dark(#fff1a8,#5a4a00)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:clip}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(5vw,18px)}
+header{border-bottom:1px solid var(--line);padding:22px 0 26px}
+.sello{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--dim)}
+.sello svg{width:30px;height:30px;flex:none}
+h1{font-size:clamp(32px,6vw,46px);line-height:1.05;margin:18px 0 10px;font-weight:800;text-wrap:balance;letter-spacing:-.01em}
+.sub{color:var(--dim);margin:0;font-size:16px}
+h2{font-size:22px;line-height:1.2;margin:40px 0 10px;font-weight:800;text-wrap:balance}
+h3{font-size:17px;margin:22px 0 6px;font-weight:800}
+p,li{max-width:68ch}
+a{color:var(--acc);text-underline-offset:3px}
+mark.falta{background:var(--mark);color:inherit;padding:0 .2em;border-radius:3px}
+.borrador{background:var(--mark);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700;margin:18px 0 0}
+.scroll{display:flex;gap:6px 18px;flex-wrap:nowrap;overflow-x:auto;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;white-space:nowrap}
+.scroll a{flex:none;color:var(--dim);text-decoration:none}.scroll a:hover,.scroll a:focus-visible{color:var(--acc)}
+@media(min-width:900px){.scroll{position:sticky;top:0;background:var(--bg);z-index:2}}
+html{scroll-padding-top:72px}
+.fichas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0 6px}
+.ficha{background:var(--soft);border-radius:14px;padding:18px 18px 10px}
+.ficha h3{margin:0 0 4px;display:flex;align-items:center;gap:8px}
+.ficha svg{width:22px;height:22px;flex:none}
+.ficha ul{margin:6px 0 8px;padding-left:18px}.ficha li{margin:3px 0;font-size:15px}
+.clave{margin:18px 0 0;padding:0;list-style:none}
+.clave li{padding:8px 0 8px 28px;position:relative;border-top:1px solid var(--line)}
+.clave li::before{content:"";position:absolute;left:4px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+table{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--dim);font-weight:800;padding:8px 10px 8px 0;border-bottom:2px solid var(--ink)}
+td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700}
+.pasos{counter-reset:p;list-style:none;padding:0;margin:16px 0}
+.pasos li{counter-increment:p;position:relative;padding:4px 0 14px 50px;min-height:44px}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:800;display:grid;place-items:center}
+.opcion{border:1px solid var(--line);border-radius:16px;padding:6px 20px 8px;margin:18px 0}
+.opcion h2{margin-top:18px}
+.etq{display:inline-block;font-size:13px;font-weight:800;color:var(--acc);margin-left:6px}
+.correo{font-weight:800;font-size:18px;word-break:break-all}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:20px 0 40px;color:var(--dim);font-size:14px}
+@media(max-width:600px){.fichas{grid-template-columns:minmax(0,1fr)}table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7.5em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7em;margin-inline-start:-7.5em;white-space:normal;color:var(--dim);font-weight:700;font-size:13px}.stack td:empty{display:none}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="sello"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H14l-6 5v-5H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" fill="var(--acc)"/><circle cx="10" cy="14.5" r="2" fill="var(--bg)"/><circle cx="16" cy="14.5" r="2" fill="var(--bg)"/><circle cx="22" cy="14.5" r="2" fill="var(--bg)"/></svg><span>humilla2</span></div>
+  <h1>Política de privacidad</h1>
+  <p class="sub">Última actualización: 25 de noviembre de 2026</p>
+  
+</header>
+<nav class="scroll" aria-label="Secciones">
+  <a href="#resumen">Resumen</a><a href="#responsable">Responsable</a><a href="#datos">Datos</a><a href="#finalidades">Para qué</a><a href="#voz">Tu voz</a><a href="#destinatarios">Quién los ve</a><a href="#plazos">Plazos</a><a href="#derechos">Tus derechos</a><a href="#edad">Edad</a><a href="#seguridad">Seguridad</a><a href="#cambios">Cambios</a>
+</nav>
+
+<main>
+<section id="resumen">
+  <div class="fichas">
+    <div class="ficha">
+      <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.1 4.5 4.5 0 0 0 7 18z" fill="var(--acc)"/></svg>En nuestro servidor</h3>
+      <ul>
+        <li>Tu @usuario, tu correo y tu contraseña (cifrada)</li>
+        <li>Los audios que envías y su texto</li>
+        <li>Diamantes, racha, partidas, duelos y votos</li>
+        <li>Tu colección y tus estadísticas</li>
+        <li>Denuncias que haces y gente que bloqueas</li>
+      </ul>
+    </div>
+    <div class="ficha">
+      <h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="var(--ink)"/><rect x="8" y="5" width="8" height="12" rx="1" fill="var(--soft)"/></svg>Solo en tu móvil</h3>
+      <ul>
+        <li>Tu fecha de nacimiento</li>
+        <li>Tus ajustes</li>
+      </ul>
+    </div>
+  </div>
+  <ul class="clave">
+    <li>Para las partidas de prueba no te pedimos nada. Para seguir, creas tu perfil con usuario, contraseña y un correo que solo sirve para recuperar la contraseña.</li>
+    <li>No te pedimos teléfono ni nombre real, y tu correo no lo ve nadie.</li>
+    <li>No vendemos tus datos. Ahora mismo no hay publicidad ni herramientas de seguimiento.</li>
+    <li>Tu voz solo se publica si tú envías un audio y lo aprobamos.</li>
+    <li>Puedes borrar tu cuenta y todos tus datos desde la propia app, en el momento. <a href="borrar-cuenta.html">Cómo borrar tu cuenta</a>.</li>
+  </ul>
+</section>
+
+<section id="responsable">
+  <h2>1. Quién es el responsable</h2>
+  <p>El responsable del tratamiento de tus datos en la app humilla2 es Linz Studio Web, nombre comercial de Javier Linzoain Pedraza, que la desarrolla y publica como particular.</p>
+  <p>Para cualquier cuestión sobre privacidad puedes escribir a <a href="mailto:linzstudioweb@gmail.com">linzstudioweb@gmail.com</a>.</p>
+</section>
+
+<section id="datos">
+  <h2>2. Qué datos tratamos</h2>
+  <table class="stack">
+    <thead><tr><th>Dato</th><th>Dónde se guarda</th><th>Para qué</th></tr></thead>
+    <tbody>
+      <tr><td>Identificador de cuenta</td><td>Servidor</td><td>Se crea solo al abrir la app, sin datos tuyos, para tus partidas de prueba. Al crear tu perfil, esa misma cuenta pasa a tener tu usuario, tu correo y tu contraseña.</td></tr>
+      <tr><td>Nombre de usuario (@usuario)</td><td>Servidor</td><td>Entrar en tu cuenta y mostrarlo a otros jugadores como autor de tus audios y en el ranking.</td></tr>
+      <tr><td>Correo electrónico</td><td>Servidor</td><td>Confirmar que es tuyo con un código, entrar en tu cuenta y recuperar la contraseña. No se lo enseñamos a nadie y no lo usamos para publicidad.</td></tr>
+      <tr><td>Contraseña</td><td>Servidor, cifrada</td><td>Entrar en tu cuenta. Se guarda cifrada: nadie puede leerla, tampoco nosotros.</td></tr>
+      <tr><td>Audios que envías</td><td>Servidor</td><td>La grabación, el texto que escribes con ella, su duración, si la firmas o es anónima, y su estado de revisión (con el motivo, si se rechaza). Sirven para revisarlos y, si se aprueban, publicarlos en el juego.</td></tr>
+      <tr><td>Datos de juego</td><td>Servidor</td><td>Diamantes, racha diaria, número de partidas, vituperios desbloqueados, nivel, veces que han sonado tus audios, duelos y votos, y la fecha en que aceptaste las normas para grabar.</td></tr>
+      <tr><td>Denuncias y bloqueos</td><td>Servidor</td><td>Las denuncias que haces sobre audios y las personas que bloqueas, para moderar el contenido y que no vuelvas a oír a quien bloqueas.</td></tr>
+      <tr><td>Datos técnicos de conexión</td><td>Registros del proveedor</td><td>Dirección IP, fecha y hora de cada conexión e información técnica de la app, para que el servicio funcione y sea seguro.</td></tr>
+      <tr><td>Fecha de nacimiento</td><td>Solo en tu móvil</td><td>Comprobar que tienes 18 años o más. No se envía a ningún servidor.</td></tr>
+      <tr><td>Colección y estadísticas</td><td>Tu móvil y una copia en el servidor</td><td>Que la app recuerde lo que has desbloqueado y tus partidas, también si entras desde otro móvil.</td></tr>
+      <tr><td>Ajustes</td><td>Solo en tu móvil</td><td>Que la app recuerde tus preferencias, como el sonido.</td></tr>
+    </tbody>
+  </table>
+  <p>La app usa el micrófono solo mientras grabas un audio, y solo si le das permiso. No accede a tus contactos, tus fotos ni tu ubicación. No hay compras con dinero real.</p>
+</section>
+
+<section id="finalidades">
+  <h2>3. Para qué los usamos y con qué base legal</h2>
+  <table class="stack">
+    <thead><tr><th>Finalidad</th><th>Base legal (RGPD)</th></tr></thead>
+    <tbody>
+      <tr><td>Que puedas jugar: tu cuenta, entrar con tu contraseña, recuperarla, partidas, diamantes, racha, colección, duelos y ranking</td><td>Ejecución del contrato: las <a href="condiciones-uso.html">condiciones de uso</a> que aceptas al crear tu cuenta (art. 6.1.b)</td></tr>
+      <tr><td>Publicar en el juego los audios que envías</td><td>Tu consentimiento, que das al aceptar las normas para grabar y al enviar cada audio (art. 6.1.a). Puedes retirarlo cuando quieras: ver <a href="#voz">Tu voz</a>.</td></tr>
+      <tr><td>Revisar audios, atender denuncias, evitar trampas y abusos, y mantener la seguridad</td><td>Interés legítimo en que el juego sea seguro y legal (art. 6.1.f) y cumplimiento de obligaciones legales, como el Reglamento de Servicios Digitales (art. 6.1.c)</td></tr>
+      <tr><td>Responder a tus mensajes y atender tus derechos</td><td>Cumplimiento de obligaciones legales (art. 6.1.c)</td></tr>
+    </tbody>
+  </table>
+  <p>No usamos tus datos para crear perfiles publicitarios.</p>
+</section>
+
+<section id="voz">
+  <h2>4. Tu voz y lo que publicas</h2>
+  <p>Tu voz es un dato personal. Cuando envías un audio, primero lo revisamos a mano. Si cumple las normas, se publica: sonará en los móviles de otros jugadores, con tu @usuario o como anónimo, según elijas al enviarlo. Otros jugadores podrán compartirlo con sus amigos desde la app, por ejemplo por WhatsApp, salvo si es Hardcore: ese contenido es privado y solo suena dentro del juego.</p>
+  <p>Si lo rechazamos, te mostramos el motivo en tu Perfil. Si un audio publicado recibe denuncias de tres jugadores distintos, deja de sonar automáticamente hasta que lo revisemos. No tomamos ninguna otra decisión automatizada sobre ti.</p>
+  <p>No usamos tu voz para identificarte de forma biométrica ni para entrenar sistemas de inteligencia artificial.</p>
+  <p>Para retirar tu consentimiento, borra tu cuenta desde la app (se borran todos tus audios) o escríbenos indicando qué audio quieres quitar. Dejará de sonar en el juego, aunque no podemos borrar las copias que otras personas ya hayan compartido fuera de la app.</p>
+</section>
+
+<section id="destinatarios">
+  <h2>5. Quién puede ver tus datos</h2>
+  <ul>
+    <li><b>Otros jugadores</b> ven tu @usuario y tus audios publicados, y su posición en el ranking. Nunca ven tu fecha de nacimiento, tus denuncias ni tus bloqueos.</li>
+    <li><b>Supabase Inc.</b> aloja la base de datos, los audios y el sistema de inicio de sesión como encargado del tratamiento, y solo trata los datos siguiendo nuestras instrucciones.</li>
+    <li><b>Resend, Inc.</b> envía los correos con los códigos (para confirmar tu correo y para recuperar la contraseña) como encargado del tratamiento. Solo recibe tu correo y el código.</li>
+    <li><b>Las apps a las que compartes</b> un audio (WhatsApp, TikTok u otras) reciben el archivo que tú decides enviar, y lo tratan según su propia política de privacidad.</li>
+    <li><b>Autoridades</b>: solo si una ley nos obliga, por ejemplo ante un requerimiento judicial o policial.</li>
+  </ul>
+  <p>Si Supabase o Resend tratan algún dato fuera del Espacio Económico Europeo, la transferencia se ampara en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+</section>
+
+<section id="plazos">
+  <h2>6. Cuánto tiempo los guardamos</h2>
+  <table class="stack">
+    <thead><tr><th>Datos</th><th>Plazo</th></tr></thead>
+    <tbody>
+      <tr><td>Cuenta (usuario, correo y contraseña), audios (también los rechazados) y datos de juego</td><td>Mientras tengas la cuenta. Al borrarla se eliminan en el momento.</td></tr>
+      <tr><td>Cuentas de prueba que nunca crearon perfil</td><td>No llevan tu nombre ni tu correo. Las borramos cuando llevan 60 días sin jugar.</td></tr>
+      <tr><td>Copias de seguridad del proveedor</td><td>Se sobrescriben solas en un máximo de 30 días.</td></tr>
+      <tr><td>Registros técnicos de conexión</td><td>Un máximo de 90 días.</td></tr>
+      <tr><td>Datos guardados en tu móvil</td><td>Hasta que borres la cuenta o desinstales la app.</td></tr>
+    </tbody>
+  </table>
+  <p>Solo conservaríamos algún dato más tiempo si una autoridad nos lo hubiera pedido antes, o si fuera imprescindible para una reclamación en curso, y únicamente mientras dure.</p>
+</section>
+
+<section id="derechos">
+  <h2>7. Tus derechos</h2>
+  <p>Puedes pedirnos acceder a tus datos, corregirlos, borrarlos, oponerte a su uso, limitarlo, recibirlos en un formato reutilizable y retirar tu consentimiento. Tu @usuario (una vez al año) y tu contraseña los puedes cambiar tú mismo en Perfil → Ajustes, y desde ahí también puedes borrar tu cuenta.</p>
+  <p>Para lo demás, escribe a <a href="mailto:linzstudioweb@gmail.com">linzstudioweb@gmail.com</a> desde el correo de tu cuenta, indicando tu @usuario. Te responderemos en un plazo máximo de un mes.</p>
+  <p>Si crees que no hemos atendido bien tu petición, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+</section>
+
+<section id="edad">
+  <h2>8. Solo para mayores de 18 años</h2>
+  <p>La app contiene lenguaje adulto y está pensada solo para mayores de edad. Al crear la cuenta te pedimos tu fecha de nacimiento, que se queda en tu móvil. Si sabemos que una cuenta pertenece a un menor, la borraremos.</p>
+</section>
+
+<section id="seguridad">
+  <h2>9. Seguridad</h2>
+  <p>Todas las conexiones van cifradas. Los audios se guardan en un almacenamiento privado y solo se reproducen mediante enlaces temporales. Las reglas de acceso de la base de datos impiden que un jugador lea o cambie los datos privados de otro. Las contraseñas se guardan cifradas. Para entrar con tu @usuario hace falta la contraseña correcta, y después de varios intentos fallidos se bloquea un rato.</p>
+</section>
+
+<section id="cambios">
+  <h2>10. Publicidad y cambios en esta política</h2>
+  <p>Ahora mismo la app no muestra publicidad. Si en el futuro la incluimos, por ejemplo con Google AdMob, actualizaremos antes esta política y, cuando la ley lo exija, te pediremos permiso en la app.</p>
+  <p>Si cambiamos algo importante, lo avisaremos en la app. La fecha de arriba indica la última versión.</p>
+</section>
+</main>
+
+<footer>
+  humilla2 · Linz Studio Web · <a href="mailto:linzstudioweb@gmail.com">linzstudioweb@gmail.com</a> · <a href="condiciones-uso.html">Condiciones de uso</a> · <a href="borrar-cuenta.html">Borrar tu cuenta</a>
+</footer>
+</div>
+
+</body>
+</html>
